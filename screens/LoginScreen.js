@@ -16,7 +16,7 @@ export default function LoginScreen({ navigation }) {
 	const [emailError, setEmailError] = useState("")
 	const [passwordError, setPasswordError] = useState("")
 
-	const test = () => {
+	const loginHandler = () => {
 		var emailValid = false;
 		if (email.length == 0) {
 			setEmailError("Email is required");
@@ -96,7 +96,7 @@ export default function LoginScreen({ navigation }) {
 			{/* <TouchableOpacity>
 				<Text style={styles.forgot_button}>Forgot Password?</Text>
 			</TouchableOpacity> */}
-			<TouchableOpacity style={styles.loginBtn} onPress={() => test()}>
+			<TouchableOpacity style={styles.loginBtn} onPress={() => loginHandler()}>
 				<Text style={styles.loginText}>LOGIN</Text>
 			</TouchableOpacity>
 		</View>
@@ -104,13 +104,13 @@ export default function LoginScreen({ navigation }) {
 }
 const styles = StyleSheet.create({
 	container: {
-		width: 450,
+		// width: 450,
 		flex: 1,
 		backgroundColor: "#fff",
 		alignItems: "center",
 		justifyContent: "center",
-		paddingLeft: 50,
-		paddingRight: 50,
+		paddingLeft: 25,
+		paddingRight: 25,
 	},
 	image: {
 		marginBottom: 40,
@@ -139,7 +139,7 @@ const styles = StyleSheet.create({
 	},
 	inputTextError: {
 		color: "#C8180F",
-		placeholderTextColor: "#C8180F",
+		// placeholderTextColor: "#C8180F",
 		marginBottom: 5,
 	},
 	forgot_button: {
