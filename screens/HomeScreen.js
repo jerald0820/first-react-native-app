@@ -1,17 +1,25 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Button, View } from 'react-native';
+import { StyleSheet, TouchableOpacity, View, Text } from 'react-native';
+import globalStyle from '../style/global';
 
 export default function HomeScreen({ navigation }) {
   return (
     <View style={styles.container}>
-      <Button 
-        title="Navigate to second screen with french"
-				onPress={() => navigation.navigate("Second", { language: "french" })}
-			/>
-      <Button 
-        title="Navigate to second screen with english"
-				onPress={() => navigation.navigate("Second", { language: "english" })}
-			/>
+      <Text style={globalStyle.headLine}>Welcome to Your Test App</Text>
+      <View style={globalStyle.buttonGroup}>
+        <TouchableOpacity 
+          style={globalStyle.primaryButton}
+          onPress={() => navigation.navigate("ProfileScreen", { language: "french", name: "John Doe" })}
+        >
+          <Text style={globalStyle.primaryButtonText}>Profile french</Text>
+        </TouchableOpacity>
+        <TouchableOpacity 
+          style={globalStyle.primaryButton}
+          onPress={() => navigation.navigate("ProfileScreen", { language: "english", name: "John Doe" })}
+        >
+          <Text style={globalStyle.primaryButtonText}>Profile english</Text>
+        </TouchableOpacity>
+      </View>
       <StatusBar style="auto" />
     </View>
   );
@@ -23,5 +31,5 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
-  },
+  }
 });
