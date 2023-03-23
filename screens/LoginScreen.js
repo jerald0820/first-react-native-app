@@ -104,7 +104,6 @@ export default function LoginScreen({ navigation }) {
 }
 const styles = StyleSheet.create({
 	container: {
-		// width: 450,
 		flex: 1,
 		backgroundColor: "#fff",
 		alignItems: "center",
@@ -162,6 +161,6 @@ const styles = StyleSheet.create({
 	errorMessage: {
 		color: "#C8180F",
 		width: "100%",
-		marginLeft: "20px"
+		marginLeft: 20
 	}
 });
